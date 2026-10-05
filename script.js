@@ -154,3 +154,17 @@ nav ul li a.active{
 color:#f8b400;
 font-weight:bold;
 }
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
+
+menuToggle.addEventListener("click", function () {
+
+    mobileNav.classList.toggle("active");
+
+    if (mobileNav.classList.contains("active")) {
+        menuToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    } else {
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+
+});
