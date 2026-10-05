@@ -41,278 +41,158 @@ ul{
 section{
     padding:100px 0;
 
-   /* =========================
-   MOBILE HEADER FIX
+ /* =========================
+   HEADER
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #111;
+    z-index: 9999;
+    padding: 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,.3);
+}
+
+header .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h2 {
+    color: #f8b400;
+    font-size: 32px;
+    margin: 0;
+}
+
+/* Desktop Menu */
+
+.desktop-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.desktop-nav ul li {
+    list-style: none;
+}
+
+.desktop-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.desktop-nav a:hover {
+    color: #f8b400;
+}
+
+.desktop-nav .btn {
+    background: #f8b400;
+    color: #111;
+    padding: 10px 18px;
+    border-radius: 30px;
+}
+
+/* Mobile Button - Desktop پر hidden */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Mobile Menu - Default hidden */
+
+.mobile-nav {
+    display: none;
+}
+
+
+/* =========================
+   MOBILE
 ========================= */
 
 @media (max-width: 768px) {
 
     header {
-        padding: 10px 0;
-        height: auto;
+        padding: 12px 0;
     }
 
     header .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        padding: 0 10px;
+        padding: 0 18px;
     }
 
     .logo h2 {
         font-size: 24px;
-        margin: 0;
     }
 
-    nav {
-        width: 100%;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scrollbar-width: none;
-    }
+    /* Hide desktop menu */
 
-    nav::-webkit-scrollbar {
+    .desktop-nav {
         display: none;
     }
 
-    nav ul {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 20px;
-        width: max-content;
-        margin: 0;
-        padding: 5px 10px;
-    }
+    /* Show hamburger */
 
-    nav ul li {
-        flex-shrink: 0;
-        list-style: none;
-    }
-
-    nav ul li a {
+    .menu-toggle {
         display: block;
-        white-space: nowrap;
-        font-size: 13px;
     }
 
-    nav ul li .btn {
-        padding: 8px 15px;
-        font-size: 13px;
-    }
-}
+    /* Mobile menu */
 
-
-/* =========================
-   VERY SMALL PHONES
-========================= */
-
-@media (max-width: 480px) {
-
-    header .container {
-        padding: 0 5px;
-    }
-
-    .logo h2 {
-        font-size: 22px;
-    }
-
-    nav ul {
-        gap: 16px;
-        padding-left: 8px;
-        padding-right: 8px;
-    }
-
-    nav ul li a {
-        font-size: 12px;
-    }
-
-    nav ul li .btn {
-        padding: 7px 13px;
-        font-size: 12px;
-    }
-}
-}/* ==========================
-   HEADER
-========================== */
-
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    background:#111;
-    z-index:1000;
-    padding:15px 0;
-    box-shadow:0 5px 15px rgba(0,0,0,.3);
-}
-
-header .container{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo h2{
-    color:#f8b400;
-    font-size:32px;
-    font-weight:700;
-    margin:0;
-}
-
-nav ul{
-    display:flex;
-    gap:30px;
-    align-items:center;
-    margin:0;
-    padding:0;
-}
-
-nav ul li a{
-    color:#fff;
-    transition:.3s;
-    font-size:16px;
-}
-
-nav ul li a:hover{
-    color:#f8b400;
-}
-
-.btn{
-    background:#f8b400;
-    color:#111;
-    padding:12px 28px;
-    border-radius:30px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.btn:hover{
-    background:#fff;
-}
-/* =========================
-   MOBILE HEADER FIX
-========================= */
-
-@media (max-width: 768px) {
-
-    header {
-        padding: 10px 0;
-    }
-
-    header .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 0 10px;
-    }
-
-    .logo h2 {
-        font-size: 25px;
-        margin: 0;
-    }
-
-    nav {
-        width: 100%;
-        overflow-x: auto;
-        scrollbar-width: none;
-    }
-
-    nav::-webkit-scrollbar {
+    .mobile-nav {
         display: none;
+        background: #111;
+        width: 100%;
+        border-top: 1px solid #333;
     }
 
-    nav ul {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 18px;
-        padding: 0 5px;
-        margin: 0;
-        width: max-content;
+    .mobile-nav.active {
+        display: block;
     }
 
-    nav ul li {
-        flex-shrink: 0;
+    .mobile-nav ul {
         list-style: none;
+        margin: 0;
+        padding: 10px 20px 20px;
+        text-align: center;
     }
 
-    nav ul li a {
-        font-size: 14px;
-        white-space: nowrap;
+    .mobile-nav ul li {
+        margin: 0;
     }
 
-    nav ul .btn,
-    nav .btn {
-        padding: 8px 15px;
-        font-size: 13px;
-        white-space: nowrap;
-    }
-}
-
-/* =========================
-   MOBILE HEADER
-========================= */
-
-@media (max-width: 768px){
-
-    header{
-        padding:10px 0;
+    .mobile-nav ul li a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 12px 10px;
+        font-size: 15px;
     }
 
-    header .container{
-        padding:0 15px;
+    .mobile-nav ul li a:hover {
+        color: #f8b400;
     }
 
-    .logo h2{
-        font-size:24px;
-    }
-
-    nav ul{
-        gap:12px;
-        flex-wrap:wrap;
-        justify-content:flex-end;
-    }
-
-    nav ul li a{
-        font-size:13px;
-    }
-
-    .btn{
-        padding:8px 14px;
-        font-size:13px;
-    }
-}
-
-
-/* Small Mobile */
-@media (max-width: 480px){
-
-    header{
-        padding:8px 0;
-    }
-
-    .logo h2{
-        font-size:20px;
-    }
-
-    nav ul{
-        gap:8px;
-    }
-
-    nav ul li a{
-        font-size:11px;
-    }
-
-    .btn{
-        padding:7px 10px;
-        font-size:11px;
+    .mobile-nav .btn {
+        background: #f8b400;
+        color: #111;
+        border-radius: 30px;
+        margin-top: 8px;
     }
 }
 /* ==========================
