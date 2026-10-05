@@ -40,6 +40,101 @@ ul{
 
 section{
     padding:100px 0;
+
+   /* =========================
+   MOBILE HEADER FIX
+========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 10px 0;
+        height: auto;
+    }
+
+    header .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 0 10px;
+    }
+
+    .logo h2 {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    nav {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        width: max-content;
+        margin: 0;
+        padding: 5px 10px;
+    }
+
+    nav ul li {
+        flex-shrink: 0;
+        list-style: none;
+    }
+
+    nav ul li a {
+        display: block;
+        white-space: nowrap;
+        font-size: 13px;
+    }
+
+    nav ul li .btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+    header .container {
+        padding: 0 5px;
+    }
+
+    .logo h2 {
+        font-size: 22px;
+    }
+
+    nav ul {
+        gap: 16px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    nav ul li .btn {
+        padding: 7px 13px;
+        font-size: 12px;
+    }
+}
 }/* ==========================
    HEADER
 ========================== */
