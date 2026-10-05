@@ -51,7 +51,7 @@ header{
     width:100%;
     background:#111;
     z-index:1000;
-    padding:20px 0;
+    padding:15px 0;
     box-shadow:0 5px 15px rgba(0,0,0,.3);
 }
 
@@ -65,11 +65,15 @@ header .container{
     color:#f8b400;
     font-size:32px;
     font-weight:700;
+    margin:0;
 }
 
 nav ul{
     display:flex;
     gap:30px;
+    align-items:center;
+    margin:0;
+    padding:0;
 }
 
 nav ul li a{
@@ -95,6 +99,66 @@ nav ul li a:hover{
     background:#fff;
 }
 
+
+/* =========================
+   MOBILE HEADER
+========================= */
+
+@media (max-width: 768px){
+
+    header{
+        padding:10px 0;
+    }
+
+    header .container{
+        padding:0 15px;
+    }
+
+    .logo h2{
+        font-size:24px;
+    }
+
+    nav ul{
+        gap:12px;
+        flex-wrap:wrap;
+        justify-content:flex-end;
+    }
+
+    nav ul li a{
+        font-size:13px;
+    }
+
+    .btn{
+        padding:8px 14px;
+        font-size:13px;
+    }
+}
+
+
+/* Small Mobile */
+@media (max-width: 480px){
+
+    header{
+        padding:8px 0;
+    }
+
+    .logo h2{
+        font-size:20px;
+    }
+
+    nav ul{
+        gap:8px;
+    }
+
+    nav ul li a{
+        font-size:11px;
+    }
+
+    .btn{
+        padding:7px 10px;
+        font-size:11px;
+    }
+}
 /* ==========================
    HERO
 ========================== */
