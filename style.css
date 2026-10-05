@@ -98,7 +98,68 @@ nav ul li a:hover{
 .btn:hover{
     background:#fff;
 }
+/* =========================
+   MOBILE HEADER FIX
+========================= */
 
+@media (max-width: 768px) {
+
+    header {
+        padding: 10px 0;
+    }
+
+    header .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .logo h2 {
+        font-size: 25px;
+        margin: 0;
+    }
+
+    nav {
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 18px;
+        padding: 0 5px;
+        margin: 0;
+        width: max-content;
+    }
+
+    nav ul li {
+        flex-shrink: 0;
+        list-style: none;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    nav ul .btn,
+    nav .btn {
+        padding: 8px 15px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+}
 
 /* =========================
    MOBILE HEADER
